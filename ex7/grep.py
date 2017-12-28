@@ -30,6 +30,8 @@ def run():
             if re.search(args.search_pattern, line):
                 print("{}: {}".format(file.name, line))
 
-# MAIN START
+define search(search_string):
 
-run()
+
+# MAIN START
+# run()
