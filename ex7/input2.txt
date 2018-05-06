@@ -1,4 +1,0 @@
-This is another file that contains the word Ipsum
-Not on this line though.
-Ipsum appears on this line.
-Does lowercase ipsum count.

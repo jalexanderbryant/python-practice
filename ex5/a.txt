@@ -1,3 +1,0 @@
-This is some	text in file A.
-More Text in file A.
-This	Line	Has	Tabs	in	it
