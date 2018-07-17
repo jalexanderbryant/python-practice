@@ -1,27 +1,27 @@
-import glob, os, argparse, re, sys
+import re, os, argparse, glob
 
-def init_argparser():
+def init_argparse():
     parser = argparse.ArgumentParser()
-    parser.add_argument("search_pattern", help="Pattern to search for", nargs=1)
-    # parser.add_argument("file_pattern", help="File to search", type=str)
+    parser.add_argument("search_pattern")
+    parser.add_argument("file_pattern")
     args = parser.parse_args()
+    # print(args)
     return args
 
+# Grep
 def grep(args):
-    print(args)
+    # Use glob to match file pattern
+    for name in glob.iglob(args.file_pattern):
+        matched_file = open(name, 'r')
+        for line in matched_file.readlines():
+            match = re.search(args.search_pattern, line)
+            if match:
+                print(line.strip())
 
-
+# Entry point - Any additional setup can be done here
 def Main():
-    args = init_argparser()
-    grep(args)
-    # Handle opening files
-    # res = re.match(r"*.txt")
-    # print(res)
+    grep(init_argparse())
 
- 
-    print("List of args\n")
-    print(args)
-
-
+# Test
 if __name__ == '__main__':
     Main()
