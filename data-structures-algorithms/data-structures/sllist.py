@@ -234,11 +234,11 @@ def test_get():
 
 # Run Tests
 if __name__ == '__main__':
-    # test_push()
-    # test_pop()
-    # test_shift()
-    # test_unshift()
-    # test_remove()
-    # test_first()
-    # test_last()
+    test_push()
+    test_pop()
+    test_shift()
+    test_unshift()
+    test_remove()
+    test_first()
+    test_last()
     test_get()
