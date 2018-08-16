@@ -59,10 +59,7 @@ class DoubleLinkedList(object):
 		if self.begin is None:
 			return None
 		elif DoubleLinkedList.node_count == 1:
-			DoubleLinkedList.node_count -= 1
-			print("***", self.pop())
-			return 
-			# return self.pop()
+			return self.pop()
 		else:
 			return_node = self.begin
 			self.begin = self.begin.next
@@ -81,11 +78,19 @@ class DoubleLinkedList(object):
 
 	def first(self):
 		"""Returns a *reference* to the first item, does not remove."""
-		pass
+		if self.begin is None:
+			return None
+		else:
+			return self.begin.value
+		
 
 	def last(self):
 		"""Returns a reference to the last item, does not remove."""
-		pass
+		if self.begin == self.end:
+			return self.begin.value
+		else:
+			return self.end.value
+
 
 	def count(self):
 		"""Counts the number of elements in the list."""
@@ -131,14 +136,10 @@ def test_unshift():
     colors.push("Viridian")
     colors.push("Sap Green")
     colors.push("Van Dyke")
-    colors.dump()
     assert colors.unshift() == "Viridian"
-    colors.dump()
     assert colors.unshift() == "Sap Green"
-    colors.dump()
-    print("****", colors.count())
     assert colors.unshift() == "Van Dyke"
-    colors.dump()
+    
     assert colors.unshift() == None
 
 def test_shift():
@@ -210,3 +211,6 @@ if __name__ == '__main__':
 	test_pop()
 	test_shift()
 	test_unshift()
+
+	test_first()
+	test_last()
