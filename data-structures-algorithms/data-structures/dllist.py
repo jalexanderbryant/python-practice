@@ -70,11 +70,38 @@ class DoubleLinkedList(object):
 		"""You'll need to use this operation sometimes, but mostly 
 		inside remove().  It should take a node, and detach it from
 		the list, whether the node is at the front, end, or in the middle."""
-		pass
+
+		# Cases...
+		# 	item at front of list
+		if self.begin == node:
+			pass
+		# 	item at end of list
+		# 	item in middle of list
+
 
 	def remove(self, obj):
 		"""Finds a matching item and removes it from the list."""
-		pass
+		# Find the node
+		if DoubleLinkedList.node_count == 0:
+			return None
+		elif DoubleLinkedList.node_count == 1 and self.begin.value != obj:
+			return None
+		else:
+			index = 0
+			if self.begin.value == obj:
+				self.unshift()
+				return index
+			else:
+				# object at second element
+				iter_node = self.begin
+				while iter_node.next != None:
+					index +=1
+					if iter_node.next.value == obj:
+						return_node = iter_node.next
+						iter_node.next = iter_node.next.next
+						return_node.next = None # no longer a pointer to this
+						return index
+					iter_node = iter_node.next
 
 	def first(self):
 		"""Returns a *reference* to the first item, does not remove."""
@@ -98,7 +125,19 @@ class DoubleLinkedList(object):
 
 	def get(self, index):
 		"""Get the value at index."""
-		pass
+		list_index = 0
+		if self.begin is None: 
+			return None
+		if index is 0:
+			return self.begin.value
+
+		# Value is at least at the second element
+		iter_node = self.begin
+		while iter_node != None:
+			if list_index is index:
+				return iter_node.value
+			list_index += 1
+			iter_node = iter_node.next
 
 	def dump(self, mark=None):
 		"""Debugging function that dumps the contents of the list."""
@@ -211,6 +250,7 @@ if __name__ == '__main__':
 	test_pop()
 	test_shift()
 	test_unshift()
-
 	test_first()
 	test_last()
+	test_remove()
+	test_get()
