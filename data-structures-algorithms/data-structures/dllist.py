@@ -139,10 +139,22 @@ class DoubleLinkedList(object):
 			list_index += 1
 			iter_node = iter_node.next
 
-	def dump(self, mark=None):
+	def reverse(self):
+		curr_node = self.end
+		self.begin = curr_node
+		while curr_node is not None:
+			temp_node = curr_node.prev
+			curr_node.prev = curr_node.next
+			curr_node.next = temp_node
+			curr_node = curr_node.next
+
+		self.end = curr_node
+		
+
+	def dump(self, note=None):
 		"""Debugging function that dumps the contents of the list."""
 		index = 0
-		print("Mark: {}".format(mark))
+		print("Note: {}".format(note))
 		curr_node = self.begin
 		if curr_node == None:
 			print("Empty list")
@@ -245,6 +257,26 @@ def test_get():
     colors.pop()
     assert colors.get(0) == None
 
+
+def test_reverse():
+    colors = DoubleLinkedList()
+    colors.push("Vermillion")
+    colors.push("Sap Green")
+    colors.push("Cadmium Yellow Light")
+    colors.push("Hansa Yellow")
+    assert colors.get(0) is "Vermillion"
+    assert colors.get(1) is "Sap Green"
+    assert colors.get(2) is "Cadmium Yellow Light" 
+    assert colors.get(3) is "Hansa Yellow"
+    colors.dump()
+    colors.reverse()
+    colors.dump()
+    assert colors.get(0) is "Hansa Yellow"
+    assert colors.get(1) is "Cadmium Yellow Light" 
+    assert colors.get(2) is "Sap Green"
+    assert colors.get(3) is "Vermillion"
+    
+
 if __name__ == '__main__':
 	test_push()
 	test_pop()
@@ -254,3 +286,4 @@ if __name__ == '__main__':
 	test_last()
 	test_remove()
 	test_get()
+	test_reverse()

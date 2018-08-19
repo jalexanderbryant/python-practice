@@ -127,6 +127,9 @@ class SingleLinkedList(object):
                 internal_index += 1
                 iter_node = iter_node.next
 
+    def reverse(self, node):
+        pass
+
     def dump(self, mark=None):
         """Debugging function that dumps the contents of the list."""
         index = 0
@@ -141,6 +144,8 @@ class SingleLinkedList(object):
             if curr_node == None:
                 print("None")
             index += 1
+
+
 # Test methods
 
 def test_push():
@@ -232,13 +237,34 @@ def test_get():
     colors.pop()
     assert colors.get(0) == None
 
+def test_reverse():
+    print("Testing Reverse")
+    colors = SingleLinkedList()
+    colors.push("Vermillion")
+    colors.push("Sap Green")
+    colors.push("Cadmium Yellow Light")
+    colors.push("Hansa Yellow")
+    assert colors.get(0) is "Vermillion"
+    assert colors.get(1) is "Sap Green"
+    assert colors.get(2) is "Cadmium Yellow Light" 
+    assert colors.get(3) is "Hansa Yellow"
+    colors.dump()
+    colors.reverse()
+    # colors.dump()
+    # assert colors.get(0) is "Hansa Yellow"
+    # assert colors.get(1) is "Cadmium Yellow Light" 
+    # assert colors.get(2) is "Sap Green"
+    # assert colors.get(3) is "Vermillion"
+
+    
 # Run Tests
 if __name__ == '__main__':
-    test_push()
-    test_pop()
-    test_shift()
-    test_unshift()
-    test_remove()
-    test_first()
-    test_last()
-    test_get()
+    # test_push()
+    # test_pop()
+    # test_shift()
+    # test_unshift()
+    # test_remove()
+    # test_first()
+    # test_last()
+    # test_get()
+    test_reverse()
