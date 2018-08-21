@@ -13,28 +13,28 @@ class SingleLinkedList(object):
     def __init__(self):
         self.begin = None
         self.end = None
-        SingleLinkedList.node_count = 0
+        self.node_count = 0
 
     def push(self, obj):
         """Appends a new value on the end of the list."""
         # create new node
         new_node = SingleLinkedListNode(obj, None)
         # Empty list
-        if SingleLinkedList.node_count == 0: 
+        if self.node_count == 0: 
             self.begin = self.end = new_node
         else:
             self.end.next = new_node
             self.end = self.end.next
-        SingleLinkedList.node_count +=1
+        self.node_count +=1
 
     def pop(self):
         """Removes the last item and returns it."""
-        if SingleLinkedList.node_count == 0:
+        if self.node_count == 0:
             return None
-        elif SingleLinkedList.node_count == 1:
+        elif self.node_count == 1:
             return_node = self.begin
             self.begin = self.end = None
-            SingleLinkedList.node_count -= 1
+            self.node_count -= 1
 
             return return_node.value
         else:
@@ -45,7 +45,7 @@ class SingleLinkedList(object):
             return_node = iter_node.next
             iter_node.next = None
             self.end = iter_node
-            SingleLinkedList.node_count -= 1
+            self.node_count -= 1
 
             return return_node.value
 
@@ -55,24 +55,24 @@ class SingleLinkedList(object):
 
     def unshift(self):
         """Removes the first item and returns it."""
-        if SingleLinkedList.node_count == 0: 
+        if self.node_count == 0: 
             return None
-        elif SingleLinkedList.node_count == 1:
+        elif self.node_count == 1:
             return_node = self.begin
             self.begin = self.end = None
-            SingleLinkedList.node_count -= 1
+            self.node_count -= 1
             return return_node.value
         else:
             return_node = self.begin
             self.begin = self.begin.next
-            SingleLinkedList.node_count -= 1
+            self.node_count -= 1
             return return_node.value
 
     def remove(self, obj):
         """Finds a matching item and removes it from the list. Returns index"""
-        if SingleLinkedList.node_count==0:
+        if self.node_count==0:
             return None
-        elif SingleLinkedList.node_count == 1 and self.begin.value != obj:
+        elif self.node_count == 1 and self.begin.value != obj:
             return None
         else:
             index = 0
@@ -107,7 +107,7 @@ class SingleLinkedList(object):
 
     def count(self):
         """Counts the number of elements in the list."""
-        return SingleLinkedList.node_count
+        return self.node_count
 
     def get(self, index):
         """Get the value at index."""
@@ -127,7 +127,7 @@ class SingleLinkedList(object):
                 internal_index += 1
                 iter_node = iter_node.next
 
-    def reverse(self, node):
+    def reverse(self):
         pass
 
     def dump(self, mark=None):
