@@ -23,6 +23,7 @@ class DynamicArray:
         return self._A[k]                               # Retreive from array
 
     def append(self, obj):
+        
         """Add object to end of the array."""
         if self._n == self._capacity:                   # not enough room
             self._resize(2 * self._capacity)            # double the capacity
