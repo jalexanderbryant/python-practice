@@ -8,16 +8,6 @@ print(sys.argv)
 """
 45 minute drill
 """
-# wrote comments about what to do
-# test statment with print sys.argv
-# listened to its always sunny in philedelphia. My focus 
-# wasn't as clear as it could have been.
-
-# Using sys.argv, I was able to accomplish -h/-help, 
-# flag arguments and variable arguments. Got distracted twice looking up web 
-# comics when i got stuck. Basic logic slowed me down a few times.
-# ONly thing I didn't finish was the positional arguments (item 4)
-
 
 def handle_args(args):
     for i in range(len(args)):
