@@ -1,0 +1,3 @@
+Start of c.txt
+Proin consequat blandit auctor. Mauris tortor enim, rutrum eget vulputate vitae, lobortis hendrerit risus. Sed id purus sed orci convallis vestibulum pretium at mi. Etiam at consectetur sem. Aenean ac scelerisque tellus. Donec tempus tristique gravida. Integer magna libero, volutpat nec molestie et, scelerisque id libero.
+End of c.txt

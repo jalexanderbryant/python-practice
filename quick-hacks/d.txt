@@ -1,0 +1,9 @@
+0 Start of a.txt
+1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper eu turpis vitae faucibus. Donec efficitur felis non nibh feugiat dignissim. Nullam hendrerit ultricies massa id dignissim. Morbi neque enim, vestibulum in risus ac, eleifend accumsan tortor. Nam nisl tellus, sagittis aliquet orci sed, aliquet mollis orci. Pellentesque volutpat euismod ullamcorper. Duis convallis arcu ut tortor mattis pulvinar. Nunc iaculis scelerisque nibh, vitae suscipit nisi ornare aliquam. Donec pellentesque, ex non viverra vulputate, dui justo finibus lacus, eget sollicitudin odio dui elementum ligula. Ut tincidunt id orci id venenatis. Vestibulum id lobortis purus.
+2 End of a.txt
+3 Start of b.txt
+4 Etiam suscipit tempor mi nec interdum. Donec semper metus nec ex interdum, a sodales sem sollicitudin. Duis posuere lacinia pretium. Nulla facilisi. Nam consequat, erat sed elementum luctus, libero ex pharetra erat, eu consectetur ex dui quis sem. Curabitur consectetur elementum velit vel volutpat. Nunc pretium mattis placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut efficitur, ipsum vitae consectetur maximus, ligula mauris venenatis ligula, a placerat purus tellus vitae diam. Aenean gravida, tortor nec volutpat varius, urna purus viverra nulla, non dictum ex ligula sed lacus. Nunc nibh risus, efficitur at odio in, gravida commodo mi. Nunc eu congue libero. Curabitur vel consectetur nisi, eget posuere massa. Nam dignissim lobortis enim id facilisis.
+5 End of b.txt
+6 Start of c.txt
+7 Proin consequat blandit auctor. Mauris tortor enim, rutrum eget vulputate vitae, lobortis hendrerit risus. Sed id purus sed orci convallis vestibulum pretium at mi. Etiam at consectetur sem. Aenean ac scelerisque tellus. Donec tempus tristique gravida. Integer magna libero, volutpat nec molestie et, scelerisque id libero.
+8 End of c.txt

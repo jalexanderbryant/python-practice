@@ -1,0 +1,3 @@
+Start of a.txt
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper eu turpis vitae faucibus. Donec efficitur felis non nibh feugiat dignissim. Nullam hendrerit ultricies massa id dignissim. Morbi neque enim, vestibulum in risus ac, eleifend accumsan tortor. Nam nisl tellus, sagittis aliquet orci sed, aliquet mollis orci. Pellentesque volutpat euismod ullamcorper. Duis convallis arcu ut tortor mattis pulvinar. Nunc iaculis scelerisque nibh, vitae suscipit nisi ornare aliquam. Donec pellentesque, ex non viverra vulputate, dui justo finibus lacus, eget sollicitudin odio dui elementum ligula. Ut tincidunt id orci id venenatis. Vestibulum id lobortis purus.
+End of a.txt
