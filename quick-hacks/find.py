@@ -5,7 +5,7 @@
 import argparse
 import glob
 import os
-class cmd(object):
+class Cmd(object):
     def __init__(self):
         parser = argparse.ArgumentParser()
         parser.add_argument("dir",
@@ -29,4 +29,4 @@ class cmd(object):
 
 
 if __name__ == '__main__':
-    cmd().find()
+    Cmd().find()
