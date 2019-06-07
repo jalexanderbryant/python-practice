@@ -2,48 +2,57 @@
 #X v1: find <starting dir>
 #X v2: find <starting dir> -name "*.txt"
 #X v3: find <starting dir> -type d
-#X v4: -type f
-#X v5: -exec {} \;
-#X v5: -perm xxx
+# v4: -type f
+# v5: -exec {} \;
+# v5: -perm xxx
 import argparse
 import glob
 import os
 import sys
 class Cmd(object):
     def __init__(self):
+        print(sys.argv)
         parser = argparse.ArgumentParser()
         parser.add_argument("dir",
-                            help="The starting directory", nargs='?',
+                            help="The starting directory",
                             type=str)
         parser.add_argument("-name", help="Filter by name", type=str)
         parser.add_argument("-type", help="Filter by type", type=str)
-        parser.add_argument("-exec", help="Action to perform", type=str)
-        self._top_level_args = parser.parse_args()
+
+        # Treat exec like a subcommand.
+        # Enable subcommand ability
+        subparser = parser.add_subparsers(help="Subcommand help")
+        parser_exec = subparser.add_parser('exec', help='Execute an action')
+        parser_exec.add_argument('cmd', help="Action to take", 
+                type=str, nargs='+')
+
+        self._args = parser.parse_args()
+        print(parser.parse_known_args())
 
     def find(self):
-        print(sys.argv)
-        path = self._top_level_args.dir if self._top_level_args.dir else '.'
+
+        path = self._args.dir if self._args.dir else '.'
         path += '/**' # Modify path to search in subdirectories
 
-        if self._top_level_args.name:
-            path += '/%s' % self._top_level_args.name
+        if self._args.name:
+            path += '/%s' % self._args.name
 
         for name in glob.iglob(path, recursive=True):
-            if self._top_level_args.type == 'd' and not os.path.isdir(name):
+            if self._args.type == 'd' and not os.path.isdir(name):
                 continue
-            if self._top_level_args.exec:
+            if hasattr(self._args,'cmd'):
+                # print('exec present')
                 # do stuff here
-                self.__exec()
+                self.__exec(name)
             else:
                 print(name)
 
 
-    def __exec(self):
-        print('test')
-        e_parser = argparse.ArgumentParser()
-        #e_parser.add_argument("subcmd", help="Subcommand to be run by -exec.",
-        #                        type=str)
-        #exec_args = e_parser.parse_args()
+    def __exec(self, path):
+        #print('action=_exec', 'current_path=%s' % path, 'cmd=', 
+        #       self._args.cmd[0])
+        command_to_run = '%s %s' % (self._args.cmd[0], path)
+        os.system(command_to_run)
 
 if __name__ == '__main__':
     Cmd().find()
