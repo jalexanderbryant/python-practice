@@ -1,0 +1,10 @@
+Sort
+31 total features
+
+Reverse: -r, --reverse
+Write result to file: -o, --output=FILE
+Random: -R, --random-sort
+Ignore Case: -f, --ignore-case
+Annotate part of string used for sorting: -V
+
+

@@ -1,0 +1,17 @@
+text.txt
+python
+practice-c
+nerdtree-master.zip
+james-alexander
+hello.c
+hello
+fullstack
+flask-saas
+flask-boilerplate
+flashcards
+first-contributions
+design-patterns
+battleship
+aws
+TurtleSense-Linux
+Python-3.6.2.tgz
