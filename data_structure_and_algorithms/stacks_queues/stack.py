@@ -24,7 +24,6 @@ class Stack:
         Adds a new value to the stack.
         """
         self._linked_list.push_to_front(value)
-        self._length += 1
 
     def pop(self):
         """
