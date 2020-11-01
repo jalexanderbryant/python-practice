@@ -69,7 +69,19 @@ class SingleLinkedList(object):
         """
         Removes and returns the first item in the list.
         """
-        pass
+        value = None
+        if self.begin == None: # Empty list
+            return None
+        elif self.begin == self.tail: # Only one element
+            value = self.tail.value
+            self.begin = self.end = None
+            self._count -= 1
+        else:
+            value = self.begin.value
+            self.begin = self.begin.next
+            self._count -= 1
+
+        return value
 
     def shift(self, obj):
         """Another name for push."""
