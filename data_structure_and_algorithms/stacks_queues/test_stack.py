@@ -50,13 +50,42 @@ class TestStack:
         #assert stack.pop() == test_list[-1]
 
     def test_pop(self):
-        pass
+        # Create a new stack
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        assert stack.top() == 3
 
     def test_top(self):
-        pass
+        # Create a new stack
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        assert stack.top() == 3
 
     def test_is_empty(self):
-        pass
+        # Create a new stack
+        stack = Stack()
+
+        assert stack.is_empty() == True
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        assert stack.top() == 3
+        assert stack.is_empty() == False
+
 
     def test_length(self):
-        pass
+        """
+        Test the length of a list.
+        """
+        # Create a new stack
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+
+        # Test Length
+        assert stack.length == 3

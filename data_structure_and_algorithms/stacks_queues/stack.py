@@ -13,6 +13,12 @@ class Stack:
         self._linked_list = SingleLinkedList()
         self._length = 0
 
+    def is_empty(self):
+        if self.length == 0:
+            return True
+        else:
+            return False
+
     def push(self, value):
         """
         Adds a new value to the stack.
@@ -24,11 +30,11 @@ class Stack:
         """
         Removes the first value from the stack and returns it.
         """
-        pass
+        return self._linked_list.pop_front()
 
     def top(self):
         """
-        Return the value of the element that was last pushed to the stack but don't remove it.
+        Get the value of the last element pushed to the stack but don't remove it's node.
         """
 
         if self._linked_list.begin:
